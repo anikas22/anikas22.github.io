@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Lora:ital,wght@0,400..700;1,400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Anika Khan</title>
+  <style>
+    body {
+      text-align: center;
+      background: url("https://wallpapersok.com/images/hd/new-york-city-with-nyc-text-2r6exwnl4sokhq2i.jpg");
+      background-size: cover;
+      background-position: center;
+      color: red;
+      font-family: "Chewy", system-ui;
+    }
+    p {
+      font-size: 22px;
+    }
+    input {
+      border: 0;
+      padding: 10px;
+      font-size: 18px;
+    }
+    input[type="submit"] {
+      background: green;
+      color: purple;
+      font-family: "Lora", serif; 
+    }
+    img {
+      border-radius: 999px;
+      }
+  </style>
+</head>
+<body>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7vUFWv847W05lrs8jouO1tVCQ7a5hnmRP_A&s">
+  <p>Hi! I'm Anika, a NYC student. Nice to meet you!</p>
+  <input id="Name" type="Name" placeholder="Your Name">
+  <input id="Email" type="email" placeholder="Your email">
+ <input id= "Schoolsname" type= "Schools name" placeholder="Your Schools name">
+ <input id="submit" type="submit">
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAra6zUsAw9szTaqoC4NSRU8cmIAwKfMWw",
+    authDomain: "sanahkhan-7a0f5.firebaseapp.com",
+    projectId: "sanahkhan-7a0f5",
+    storageBucket: "sanahkhan-7a0f5.firebasestorage.app",
+    messagingSenderId: "1078748038123",
+    appId: "1:1078748038123:web:556b6d9ba488eadc864fae"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  const Name = document.querySelector("#Name") 
+  const Email = document.querySelector("#Email")
+  const School = document.querySelector("#Schoolsname")
+document.querySelector('#submit').addEventListener('click', Submit)
+  
+function buildTimestamp() {
+  const now = new Date();
+  let timestamp = now.getFullYear().toString() + "/";
+  //const month = now.toLocaleString('default', { month: 'long' });
+
+  let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+  month = month.toString()
+  month = addLeadingZero(month)
+  timestamp += month + "/"; 
+
+  let date = now.getDate().toString()
+  date = addLeadingZero(date)
+  timestamp += date + "/";
+
+  let hours = now.getHours().toString()
+  hours = addLeadingZero(hours)
+  timestamp += hours + ":";
+
+  let minutes = now.getMinutes().toString()
+  minutes = addLeadingZero(minutes)
+  timestamp += minutes + ":";
+
+  let seconds = now.getSeconds().toString()
+  seconds = addLeadingZero(seconds)
+  timestamp += seconds;
+
+  return timestamp
+}
+
+function addLeadingZero(units) {
+	if (units.length < 2) {
+		units = "0" + units
+	}
+	return units
+}
+  
+  
+function Submit() {
+  const timestamp = buildTimestamp()
+  
+  set(ref(db, timestamp), {
+	  Name: Name.value,
+      email: Email.value,
+	  School: School.value,
+  });
+
+  Name.value = ""
+  Email.value = ""
+  School.value = ""
+}
+
+
+
+
+
+
+</script>
+
+
+
+</body>
