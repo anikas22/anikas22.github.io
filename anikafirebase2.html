@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Nerko+One&family=Pangolin&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+<style>
+    input {
+  	font-size: 22px;
+    }
+	
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: beige;
+}
+div {
+  height: 300px;
+  background-size: 100% 100%;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: "Pangolin", cursive;
+  text-align: center;
+  font-size: 75px;
+  color: green;
+  margin: 60px 0 0 0;
+}
+h2 {
+  font-family: "Lora", serif;
+  text-align: center;
+  color: red;
+  margin: 0px 0 70px 0;
+}
+p {
+  font-family: "Sour Gummy", sans-serif;
+  color: red;
+  background: black;
+  background: linear-gradient(bottom, rgba(126,34,47,1), rgba(53,12,34,.4));
+  background: -webkit-linear-gradient(bottom, rgba(126,34,47,1), rgba(126,34,47,.4));
+  background: -moz-linear-gradient(bottom, rgba(126,34,47,1), rgba(126,34,47,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://brandsitesplatform-res.cloudinary.com/image/fetch/w_auto:100,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_auto,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2Fproject%2Fgmi%2Foldelpaso%2Foldelpaso-us%2Frecipes%2Fqtcu578og0gukdk_kb_rmg_gmi_hi_res_jpeg.jpeg%3F");
+}
+.second{
+  background-image: url("https://www.everythingerica.com/wp-content/uploads/2014/07/Enchiladas.jpg.jpg");
+}
+.third{
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fbuenofoods.com%2Fpork-tamales%2F&psig=AOvVaw1qNSPig-MOmtaVPvI150os&ust=1744391926109000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJD5_Lr8zYwDFQAAAAAdAAAAABAE");
+}
+
+.fourth{
+  background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSVPYFZqym_K92-JL29la-xB0aZw5Ncb8XjNUxI2T97EBLoAbqNrFEzxFqHZKZwhD-r4kGpHqudVHP0xP413yEyLR_dG90nuSw07nPAZw");
+}
+
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<h1>Anika's Kitchen</h1>
+<h2>NYC Mexican Eatery</h2>
+
+<div class="first show-description">
+	<input class="quantities"type="number" min="0" style="width: 50px">
+  <p>Customizable Tacos!<span class="price">$16</span><br />
+  <small>A small but delicious dish comes in a bundle of 4 made with a crispy tortilla filled with meat of choice, cheese, sour cream, beans, salsa, lettuce, and other veggies of choice. </small></p>
+</div>
+
+<div class="second show-description">
+	<input class="quantities"type="number" min="0" style="width: 50px">
+  <p>Enchiladas!<span class="price">$12</span><br />
+  <small>A tasty dish made with corn tortillas stuffed with fillings such as shredded meat of choice or beans, which is then rolled up and smothered in a rich chili sauce, then baked with melted cheese on top. </small></p>
+</div>
+  
+<div class="third show-description">
+	<input class="quantities"type="number" min="0" style="width: 50px">
+  <p>Tamales!<span class="price">$8</span><br />
+  <small>A dish made with masa (corn dough) filled with meat of choice, cheese, or chilies, wrapped in corn husk and steamed.</small></p>
+</div>
+
+<div class="fourth show-description">
+	<input class="quantities"type="number" min="0" style="width: 50px">
+  <p>Burritos!<span class="price">$12</span><br />
+  <small>Burritos are filled with savory ingredients, most often a meat such as beef, chicken, or pork, and often include other ingredients, such as rice, cooked beans, etc.</small></p>
+</div>
+
+<br><br>
+  <input id="Name" type="Name" placeholder="Your Name">
+  <input id="Email" type="email" placeholder="Your email">
+  <input id="submit" type="submit">
+<br><br>
+
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDUsCOH_q6-gIxv5GHpSg1G6YFiNicZV7Y",
+    authDomain: "sanahkhanproject3.firebaseapp.com",
+    databaseURL: "https://sanahkhanproject3-default-rtdb.firebaseio.com",
+    projectId: "sanahkhanproject3",
+    storageBucket: "sanahkhanproject3.firebasestorage.app",
+    messagingSenderId: "804919454193",
+    appId: "1:804919454193:web:112402e56be8ffc66ffc50"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app)
+
+    const Name = document.querySelector("#Name") 
+    const Email = document.querySelector("#Email")
+    document.querySelector('#submit').addEventListener('click', Submit)
+    const quantities = document.querySelectorAll(".quantities")
+    const itemsList = ["tacos", "tamales", "enchiladas", "Burritos"]
+    const prices = document.querySelectorAll(".price")
+  
+  function buildTimestamp() {
+    const now = new Date();
+    let timestamp = now.getFullYear().toString() + "/";
+    //const month = now.toLocaleString('default', { month: 'long' });
+
+    let month = now.getMonth()+1   //add 1 because Javascript uses 0 for January
+    month = month.toString()
+    month = addLeadingZero(month)
+    timestamp += month + "/"; 
+
+    let date = now.getDate().toString()
+    date = addLeadingZero(date)
+    timestamp += date + "/";
+
+    let hours = now.getHours().toString()
+    hours = addLeadingZero(hours)
+    timestamp += hours + ":";
+
+    let minutes = now.getMinutes().toString()
+    minutes = addLeadingZero(minutes)
+    timestamp += minutes + ":";
+
+    let seconds = now.getSeconds().toString()
+    seconds = addLeadingZero(seconds)
+    timestamp += seconds;
+	
+
+
+    return timestamp
+  }
+
+  function addLeadingZero(units) {
+  	if (units.length < 2) {
+  		units = "0" + units
+  	}
+  	return units
+  }
+  
+  
+  function Submit() {
+    const timestamp = buildTimestamp()
+    let total = 0
+	let cart = { }
+
+  	for  (let i=0; i<quantities.length; i=i+1) {
+  	  if (quantities[i].value != "0" && quantities[i].value != "") {	
+		let price = prices[i].innerHTML.replace('$', '')
+		total = total + quantities[i].value * price
+  	    cart[itemsList[i]] = parseInt(quantities[i].value)
+
+		   
+  	  }
+  	  quantities[i].value = ""
+  	}
+	  
+  
+    set(ref(db, timestamp), {
+  	  Name: Name.value,
+        email: Email.value,
+	   cart: cart,
+      totalPrice: total,
+      paid: "not yet",
+    });
+
+    Name.value = ""
+    Email.value = ""
+  }
+
+
+</script>
+
+
+
+</body>
